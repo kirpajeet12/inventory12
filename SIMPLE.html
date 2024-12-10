@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="number"], input[type="password"], input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="loginPage">
+        <h1>Login</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password" required>
+        <br><br>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Inventory Page -->
+    <div id="inventoryPage" class="hidden">
+        <h1>Daily Inventory Report</h1>
+        <form id="inventoryForm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>24" Dust Mop</td>
+                    <td><input type="number" name="dustMop24" value="30"></td>
+                </tr>
+                <tr>
+                    <td>36" Dust Mop</td>
+                    <td><input type="number" name="dustMop36" value="30"></td>
+                </tr>
+                <tr>
+                    <td>48" Dust Mop</td>
+                    <td><input type="number" name="dustMop48" value="30"></td>
+                </tr>
+                <tr>
+                    <td>36" Micro Dust Mop</td>
+                    <td><input type="number" name="microDustMop36" value="10"></td>
+                </tr>
+                <tr>
+                    <td>Tube Mops</td>
+                    <td><input type="number" name="tubeMops" value="250"></td>
+                </tr>
+                <tr>
+                    <td>Wet Mop</td>
+                    <td><input type="number" name="wetMop" value="200"></td>
+                </tr>
+                <tr>
+                    <td>Black Aprons</td>
+                    <td><input type="number" name="blackAprons" value="2000"></td>
+                </tr>
+                <tr>
+                    <td>White Aprons</td>
+                    <td><input type="number" name="whiteAprons" value="500"></td>
+                </tr>
+                <tr>
+                    <td>Starbucks Apron</td>
+                    <td><input type="number" name="starbucksApron" value="500"></td>
+                </tr>
+                <tr>
+                    <td>Red Aprons</td>
+                    <td><input type="number" name="redAprons" value="50"></td>
+                </tr>
+                <tr>
+                    <td>4 Way White</td>
+                    <td><input type="number" name="fourWayWhite" value="100"></td>
+                </tr>
+                <tr>
+                    <td>4 Way Black</td>
+                    <td><input type="number" name="fourWayBlack" value="50"></td>
+                </tr>
+                <tr>
+                    <td>12" Micro Mop Orange</td>
+                    <td><input type="number" name="microMopOrange" value="30"></td>
+                </tr>
+                <tr>
+                    <td>20" Micro Mop Blue</td>
+                    <td><input type="number" name="microMopBlue" value="30"></td>
+                </tr>
+                <tr>
+                    <td>Large Premium</td>
+                    <td><input type="number" name="largePremium" value="800"></td>
+                </tr>
+                <tr>
+                    <td>Bath Towel</td>
+                    <td><input type="number" name="bathTowel" value="100"></td>
+                </tr>
+                <tr>
+                    <td>Hand Towel</td>
+                    <td><input type="number" name="handTowel" value="300"></td>
+                </tr>
+                <tr>
+                    <td>Car Wash Towel</td>
+                    <td><input type="number" name="carWashTowel" value="200"></td>
+                </tr>
+                <tr>
+                    <td>Waist White Press</td>
+                    <td><input type="number" name="waistWhitePress" value="50"></td>
+                </tr>
+                <tr>
+                    <td>Bistro Apron</td>
+                    <td><input type="number" name="bistroApron" value="100"></td>
+                </tr>
+                <tr>
+                    <td>White Micro</td>
+                    <td><input type="number" name="whiteMicro" value="6000"></td>
+                </tr>
+                <tr>
+                    <td>Grey Micro</td>
+                    <td><input type="number" name="greyMicro" value="1500"></td>
+                </tr>
+                <tr>
+                    <td>Blue Micro</td>
+                    <td><input type="number" name="blueMicro" value="1600"></td>
+                </tr>
+                <tr>
+                    <td>Green Micro</td>
+                    <td><input type="number" name="greenMicro" value="400"></td>
+                </tr>
+                <tr>
+                    <td>Orange Micro</td>
+                    <td><input type="number" name="orangeMicro" value="400"></td>
+                </tr>
+                <tr>
+                    <td>Yellow Micro</td>
+                    <td><input type="number" name="yellowMicro" value="300"></td>
+                </tr>
+                <tr>
+                    <td>Glass Towel</td>
+                    <td><input type="number" name="glassTowel" value="300"></td>
+                </tr>
+                <tr>
+                    <td>Terry White</td>
+                    <td><input type="number" name="terryWhite" value="25000"></td>
+                </tr>
+                <tr>
+                    <td>Terry Pink</td>
+                    <td><input type="number" name="terryPink" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Red Shop Towel</td>
+                    <td><input type="number" name="redShopTowel" value="2000"></td>
+                </tr>
+                <tr>
+                    <td>Red Shop Folded</td>
+                    <td><input type="number" name="redShopFolded" value="150"></td>
+                </tr>
+                <tr>
+                    <td>White Shop</td>
+                    <td><input type="number" name="whiteShop" value="1500"></td>
+                </tr>
+                <tr>
+                    <td>Huck Towel</td>
+                    <td><input type="number" name="huckTowel" value="1500"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" onclick="sendData()">Send Data</button>
+    </form>
+    </form>
+    </div>
+
+    <script>
+        // Replace these with your secure credentials in a backend implementation.
+        const credentials = {
+            username: "manager123",
+            password: "securepassword"
+        };
+
+        function login() {
+            const enteredUsername = document.getElementById('username').value;
+            const enteredPassword = document.getElementById('password').value;
+
+            if (enteredUsername === credentials.username && enteredPassword === credentials.password) {
+                document.getElementById('loginPage').classList.add('hidden');
+                document.getElementById('inventoryPage').classList.remove('hidden');
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+
+        function sendData() {
+            const formData = new FormData(document.getElementById('inventoryForm'));
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            alert('Data Sent: ' + JSON.stringify(data));
+            // Replace this alert with code to send data to a server or email.
+        }
+    </script>
+</body>
+</html>
